@@ -10,7 +10,7 @@ import lombok.Data;
 @Document(collection = "User")
 public class User {
 	@Id	
-	//@GeneratedValue(strategy= GenerationType.Auto)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId ;
 	private String userName;  
 	private String emailId;
