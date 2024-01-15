@@ -1,0 +1,12 @@
+[
+    {
+        "storeId":0,
+        "storeSite": "Pune",
+        "vendor": "They",
+        "contractor": "Also they",
+        "materialName": "Toor Daal",
+        "materialQuantity": 5,
+        "invoiceID":9898098,
+        "invoiceDate":"12-12-12"
+    }
+]

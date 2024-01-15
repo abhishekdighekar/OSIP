@@ -12,7 +12,7 @@ import lombok.Data;
 public class Employee {
 
 	@Id
-	private int employeeId;
+	private String employeeId;
 	private String employeeName;
 	private String employeeEmail;
 	private long phoneNo;
@@ -20,10 +20,10 @@ public class Employee {
 	private long adhaarNo;
 	private String insuaranceNo;
 	
-	public int getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
-	public void setEmployeeId(int employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 	public String getEmployeeName() {

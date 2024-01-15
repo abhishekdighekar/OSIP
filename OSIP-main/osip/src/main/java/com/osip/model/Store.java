@@ -12,25 +12,25 @@ import lombok.Data;
 public class Store {
 
 	@Id
-	private int storeid;
-	private String storesite;
+	private String storeId;
+	private String storeSite;
 	private String vendor;
 	private String contractor;
 	private String materialName;
 	private String materialQuantity;
 	private String invoiceID;
 	private String invoiceDate;
-	public int getStoreid() {
-		return storeid;
+	public String getStoreid() {
+		return storeId;
 	}
-	public void setStoreid(int storeid) {
-		this.storeid = storeid;
+	public void setStoreId(String storeid) {
+		this.storeId = storeid;
 	}
 	public String getStoresite() {
-		return storesite;
+		return storeSite;
 	}
 	public void setStoresite(String storesite) {
-		this.storesite = storesite;
+		this.storeSite = storesite;
 	}
 	public String getVendor() {
 		return vendor;

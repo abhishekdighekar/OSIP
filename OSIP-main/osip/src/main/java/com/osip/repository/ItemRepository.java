@@ -1,9 +1,7 @@
 package com.osip.repository;
 
+import com.osip.model.Item;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import com.osip.model.User;
-
-public interface UserRepository extends MongoRepository<User, String>{
+public interface ItemRepository extends MongoRepository<Item,String>{
 
 }

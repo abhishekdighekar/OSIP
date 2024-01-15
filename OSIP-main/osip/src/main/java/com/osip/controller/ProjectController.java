@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,27 +20,33 @@ import com.osip.repository.ProjectRepository;
 @RequestMapping("/project")
 public class ProjectController {
     @Autowired
-    private ProjectRepository repository;
+    private ProjectRepository projectRepository;
 
     @PostMapping("/addProject")
     public String saveProject(@RequestBody Project project) {
-        repository.save(project);
+    	projectRepository.save(project);
         return "Added project with id : "+ project.getProjectId();
     }
 
     @GetMapping("/findAllProject")
     public List<Project> getProject(){
-        return repository.findAll();
+        return projectRepository.findAll();
     }
 
     @GetMapping("/findAllProject/{id}")
     public Optional<Project> getProject(@PathVariable int id){
-        return repository.findById(id);
+        return projectRepository.findById(id);
     }
 
+    @PutMapping("/{id}")
+    public Project updateProject(@PathVariable String id, @RequestBody Project newProject) {
+        newProject.setProjectId(id);
+        return projectRepository.save(newProject);
+    }
+    
     @DeleteMapping("/delete/{id}")
     public String deleteProject(@PathVariable int id) {
-        repository.deleteById(id);
+    	projectRepository.deleteById(id);
         return "Project deleted with id: "+id;
     }
 }

@@ -11,16 +11,16 @@ import lombok.Data;
 @Document(collection= "Project")
 public class Project {
 	@Id
-	private int projectId;
+	private String projectId;
 	private String projectName;
 	private String projectSite;
 	private String projectStatus;
 	private String projectManager;
 	private String projectStaff;
-	public int getProjectId() {
+	public String getProjectId() {
 		return projectId;
 	}
-	public void setProjectId(int projectId) {
+	public void setProjectId(String projectId) {
 		this.projectId = projectId;
 	}
 	public String getProjectName() {
